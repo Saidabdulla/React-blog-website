@@ -1,0 +1,20 @@
+.navbar {
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: 9999;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  padding: 10px 150px;
+  align-items: center;
+}
+
+.drawer-content {
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.navbar-white {
+  color: white;
+}
