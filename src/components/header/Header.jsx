@@ -1,5 +1,5 @@
 import React from "react";
-import Navbar from "../navbar/Navbar";
+import Navbar from "../navbar/navbar";
 
 import headerCss from "./header.module.css";
 

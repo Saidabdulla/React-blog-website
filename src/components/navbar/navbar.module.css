@@ -9,12 +9,3 @@
   padding: 10px 150px;
   align-items: center;
 }
-
-.drawer-content {
-  width: 100%;
-  background-color: rgba(0, 0, 0, 0.5);
-}
-
-.navbar-white {
-  color: white;
-}

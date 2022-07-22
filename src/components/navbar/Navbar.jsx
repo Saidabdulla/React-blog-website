@@ -1,15 +1,22 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
+import { useLocation } from "react-router-dom";
 import Typography from "@mui/material/Typography";
 import IconButton from "@mui/material/IconButton";
 import MenuIcon from "@mui/icons-material/Menu";
 import SearchIcon from "@mui/icons-material/Search";
 import CloseIcon from "@mui/icons-material/Close";
 import { Drawer } from "@mui/material";
+import DrawerContent from "../drawer-content/drawer-content";
 
 import navbarCss from "./navbar.module.css";
 
-const Navbar = () => {
+const Navbar = ({ color }) => {
   const [open, setOpen] = useState(false);
+  const location = useLocation();
+
+  useEffect(() => {
+    setOpen(false);
+  }, [location]);
 
   return (
     <>
@@ -18,15 +25,22 @@ const Navbar = () => {
           onClick={() => (open ? setOpen(false) : setOpen(true))}
           size="large"
           aria-label="menu"
-          style={{ color: "white" }}
+          style={open ? { color: "white" } : { color: color || "white" }}
         >
           {open ? <CloseIcon /> : <MenuIcon />}
         </IconButton>
-        <Typography variant="h6" style={{ color: "white" }}>
+        <Typography
+          variant="h6"
+          style={open ? { color: "white" } : { color: color || "white" }}
+        >
           Personal Travel Blog
         </Typography>
 
-        <IconButton size="large" aria-label="menu" style={{ color: "white" }}>
+        <IconButton
+          size="large"
+          aria-label="menu"
+          style={open ? { color: "white" } : { color: color || "white" }}
+        >
           <SearchIcon />
         </IconButton>
       </nav>
@@ -47,7 +61,7 @@ const Navbar = () => {
           },
         }}
       >
-        Drawer content
+        <DrawerContent />
       </Drawer>
     </>
   );

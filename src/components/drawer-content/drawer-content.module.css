@@ -1,0 +1,43 @@
+.content {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  width: 100%;
+  height: 100%;
+}
+
+.list {
+  margin-left: 150px;
+}
+
+.list li {
+  font-size: 46px;
+  margin: 20px 0;
+}
+
+.list li a {
+  color: #949799;
+}
+
+.list li a[class="active"] {
+  color: white;
+  position: relative;
+  padding-left: 70px;
+  transition: 0.25s;
+}
+
+.list li a::before {
+  position: absolute;
+  content: "";
+  height: 2px;
+  width: 0;
+  top: 50%;
+  transform: translate(-50%, 0);
+  background-color: white;
+  left: 30px;
+}
+
+.list li a[class="active"]::before {
+  transition: 0.25s;
+  width: 46px;
+}
