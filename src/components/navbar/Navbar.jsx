@@ -3,8 +3,8 @@ import Typography from "@mui/material/Typography";
 import IconButton from "@mui/material/IconButton";
 import MenuIcon from "@mui/icons-material/Menu";
 import SearchIcon from "@mui/icons-material/Search";
+import CloseIcon from "@mui/icons-material/Close";
 import { Drawer } from "@mui/material";
-import { Purple } from "@mui/material/colors";
 
 import navbarCss from "./navbar.module.css";
 
@@ -20,7 +20,7 @@ const Navbar = () => {
           aria-label="menu"
           style={{ color: "white" }}
         >
-          <MenuIcon />
+          {open ? <CloseIcon /> : <MenuIcon />}
         </IconButton>
         <Typography variant="h6" style={{ color: "white" }}>
           Personal Travel Blog
